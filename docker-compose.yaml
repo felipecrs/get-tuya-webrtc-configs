@@ -1,0 +1,4 @@
+services:
+  get-tuya-webrtc-configs:
+    image: ghcr.io/felipecrs/get-tuya-webrtc-configs:latest
+    build: .

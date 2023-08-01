@@ -4,16 +4,12 @@ set -euxo pipefail
 
 shopt -s inherit_errexit
 
-# client id / access id (get from https://iot.tuya.com/cloud/basic?toptab=project)
-readonly client_id="$1"
-# client secret / access secret (get from https://iot.tuya.com/cloud/basic?toptab=project)
-readonly client_secret="$2"
-# user id / uid (get from https://iot.tuya.com/cloud/basic?toptab=related&deviceTab=4)
-readonly user_id="$3"
-# the camera device id (get from https://iot.tuya.com/cloud/basic?toptab=related&deviceTab=all)
-readonly device_id="$4"
+readonly device_id="${1}"
 
-# Get yours from https://developer.tuya.com/en/docs/iot/api-request?id=Ka4a8uuo1j4t4#title-1-Endpoints
+readonly client_id="${TUYA_CLIENT_ID?}"
+readonly client_secret="${TUYA_CLIENT_SECRET?}"
+readonly user_id="${TUYA_USER_ID?}"
+
 readonly tuya_base_url="${TUYA_BASE_URL?}"
 
 readonly encoded_empty_body="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"

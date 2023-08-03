@@ -1,5 +1,7 @@
 # get-tuya-webrtc-configs
 
+This project is WIP. It's currently failing at the MQTT Subscription, any help is appreciated.
+
 ## Requirements
 
 - Tuya API account

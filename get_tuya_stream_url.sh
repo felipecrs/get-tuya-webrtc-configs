@@ -3,12 +3,14 @@
 # This script gets the RTSP stream URL for a Tuya camera and prints it to stdout.
 #
 # Usage:
-# ./get_tuya_rtsp_stream.sh <device id> <client id> <secret it> <tuya api base url>
+# ./get_tuya_rtsp_stream.sh <device id> <client id> <secret it> <tuya api base url> [stream type]
+#
+# [stream type] can be "RTSP" or "HLS". Default is "RTSP" if not provided.
 #
 # Example of go2rtc.yaml:
 # streams:
 #   tuya_camera:
-#     - echo:/config/scripts/get_tuya_rtsp_stream.sh <device id> <client id> <secret it> https://openapi.tuyaus.com
+#     - echo:/config/scripts/get_tuya_rtsp_stream.sh <device id> <client id> <secret it> https://openapi.tuyaus.com HLS
 
 set -euo pipefail
 
@@ -18,6 +20,7 @@ readonly device_id="${1}"
 readonly client_id="${2}"
 readonly client_secret="${3}"
 readonly tuya_base_url="${4}"
+readonly stream_type="${5:-"RTSP"}"
 
 readonly encoded_empty_body="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
@@ -48,7 +51,7 @@ path="/v1.0/devices/${device_id}/stream/actions/allocate"
 body=$(
   jq -c <<EOF
 {
-  "type": "HLS"
+  "type": "${stream_type}"
 }
 EOF
 )
@@ -74,4 +77,4 @@ url=$(
     jq -er .result.url
 )
 
-echo "${url}"
+echo -n "${url}"

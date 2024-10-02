@@ -3,7 +3,7 @@
 # This script gets the RTSP stream URL for a Tuya camera and prints it to stdout.
 #
 # Usage:
-# ./get_tuya_rtsp_stream.sh <device id> <client id> <secret it> <tuya api base url> [stream type]
+# ./get_tuya_rtsp_stream.sh <device id> <client id> <client secret> <tuya api base url> [stream type]
 #
 # [stream type] can be "RTSP" or "HLS". Default is "RTSP" if not provided.
 #

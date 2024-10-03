@@ -2,8 +2,7 @@
 > This project is dead. It had only two scripts which are no longer relevant:
 > - `get_tuya_webrtc_configs.sh` never worked, and its functionality is now being incorporated into go2rtc:
 >   - https://github.com/AlexxIT/go2rtc/pull/1379
-> - `get_tuya_stream_url.sh` had portability issues across Linux distributions. It has been rewritten in Python and it is now available at:
->   - [`hass-expose-camera-stream-source/scripts/get_tuya_stream_url.py`](https://github.com/felipecrs/hass-expose-camera-stream-source/blob/master/custom_components/expose_camera_stream_source/scripts/get_tuya_stream_url.py)
+> - `get_tuya_stream_url.sh` had [portability issues across Linux distributions](https://github.com/felipecrs/get-tuya-webrtc-configs/issues/2). It has been [rewritten in Python](https://github.com/felipecrs/hass-expose-camera-stream-source/pull/39) and it is now available [here](https://github.com/felipecrs/hass-expose-camera-stream-source/blob/d10b4641c42ac974207837903d56d9e1f4b2e0d0/README.md#bonus-importing-tuya-cameras-to-go2rtc-without-home-assistant).
 
 # get-tuya-webrtc-configs
 
